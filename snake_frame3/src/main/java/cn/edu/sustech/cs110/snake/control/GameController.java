@@ -473,7 +473,7 @@ public class GameController implements Initializable {
         //Media media=new Media(new File(url1).toURI().toString());
         //MediaPlayer mediaPlayer=new MediaPlayer(media);
         gameMediaPlayer.pause();
-
+        gameOverMediaPlayer.play();
 
         //this.btnPause.setText("Game over");
         Platform.runLater(new Runnable() {
