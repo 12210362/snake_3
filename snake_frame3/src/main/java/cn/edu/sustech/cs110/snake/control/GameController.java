@@ -472,7 +472,7 @@ public class GameController implements Initializable {
         //String url1="game over.wav";
         //Media media=new Media(new File(url1).toURI().toString());
         //MediaPlayer mediaPlayer=new MediaPlayer(media);
-        gameMediaPlayer.pause();
+
         gameOverMediaPlayer.play();
 
 
