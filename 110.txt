@@ -1,0 +1,6 @@
+35,28 34,28 
+DOWN
+29,4
+Current score: 1
+History highest: 1
+Time alive: 9s

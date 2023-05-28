@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import cn.edu.sustech.cs110.snake.view.components.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="root" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.sustech.cs110.snake.control.GameController">
+    <MenuBar prefHeight="23.0" prefWidth="640.0" VBox.vgrow="NEVER">
+        <Menu mnemonicParsing="false" text="Game">
+            <MenuItem fx:id="menuPause" mnemonicParsing="false" onAction="#togglePause" text="Play" />
+            <MenuItem mnemonicParsing="false" onAction="#doRestart" text="Restart" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <RadioMenuItem fx:id="diffEasy" mnemonicParsing="false" onAction="#changeEasy" text="Easy">
+                <toggleGroup>
+                    <ToggleGroup fx:id="difficulty" />
+                </toggleGroup>
+            </RadioMenuItem>
+            <RadioMenuItem fx:id="diffMedium" mnemonicParsing="false" onAction="#changeMedium" text="Medium" toggleGroup="$difficulty" />
+            <RadioMenuItem fx:id="diffHard" mnemonicParsing="false" onAction="#changeHard" text="Hard" toggleGroup="$difficulty" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Utilities">
+            <CheckMenuItem fx:id="menuMusic" mnemonicParsing="false" onAction="#toggleMusic" text="Stop Music" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#doRecover" text="Recover from..." />
+            <MenuItem mnemonicParsing="false" onAction="#doSave" text="Save as..." />
+            <MenuItem mnemonicParsing="false" onAction="#doQuit" text="Quit" />
+        </Menu>
+    </MenuBar>
+    <SplitPane dividerPositions="0.7" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <GameBoard fx:id="board" prefHeight="405.0" prefWidth="432.0">
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints></GameBoard>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </VBox.margin>
+                <Label fx:id="player" text="Player: P1">
+                    <VBox.margin>
+                        <Insets bottom="2.0" />
+                    </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+                </Label>
+                <Text fx:id="textPlayerHighest" strokeType="OUTSIDE" strokeWidth="0.0" text="History highest: 0" translateY="20.0">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+                </Text>
+            <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="140.0" translateY="-10.0">
+               <image>
+                  <Image url="@ab9aac2402e678164df8889e06488b7.png" />
+               </image>
+            </ImageView>
+                <Text fx:id="textCurrentScore" fill="#0e32ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Current score: 0" translateY="10.0">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="2.0" />
+                    </VBox.margin>
+                </Text>
+                <Text fx:id="textTimeAlive" strokeType="OUTSIDE" strokeWidth="0.0" text="Time alive: 0s" translateY="30.0">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" translateX="140.0" translateY="10.0">
+               <image>
+                  <Image url="@784d4d1038e584a3a2b9e7cd85c65eb.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="first" text="NO.1" translateY="30.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="second" text="NO.2" translateY="40.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="third" text="NO.3" translateY="50.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </VBox>
+         <ImageView fitHeight="75.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@34aa4f3d7bc017951262102f5d4ba50.png" />
+            </image>
+         </ImageView>
+            <Separator prefHeight="18.0" prefWidth="200.0" />
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="10.0" prefWidth="91.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="83.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="46.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="25.0" minHeight="3.0" prefHeight="3.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <VBox.margin>
+                    <Insets bottom="20.0" top="20.0" />
+                </VBox.margin>
+                <Button fx:id="btnPause" mnemonicParsing="false" onAction="#togglePause" prefHeight="28.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Play" textAlignment="CENTER" textFill="#f8f9fd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#toGoBack" style="-fx-background-color: blue;" text="Home" textFill="#fffdfd" translateX="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            </GridPane>
+        </VBox>
+    </SplitPane>
+</VBox>

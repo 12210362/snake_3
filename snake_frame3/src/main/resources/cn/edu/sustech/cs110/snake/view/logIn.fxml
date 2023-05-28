@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="log" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.sustech.cs110.snake.control.LogIn">
+   <children>
+      <ImageView fitHeight="639.0" fitWidth="732.0" pickOnBounds="true">
+         <image>
+            <Image url="@780.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="LogIn" layoutX="180.0" layoutY="384.0" mnemonicParsing="false" onAction="#toCheckPassword" prefHeight="45.0" prefWidth="166.0" style="-fx-background-color: black;" text="LogIn" textFill="#f5f3f3">
+         <font>
+            <Font name="Bookman Old Style Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="Register" layoutX="431.0" layoutY="384.0" mnemonicParsing="false" onAction="#toRegister" prefHeight="46.0" prefWidth="166.0" style="-fx-background-color: Black;" text="Register" textFill="#fffdfd">
+         <font>
+            <Font name="Bookman Old Style Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="ID" layoutX="182.0" layoutY="169.0" prefHeight="58.0" prefWidth="270.0" />
+      <TextField fx:id="PASSWORD" layoutX="180.0" layoutY="261.0" prefHeight="58.0" prefWidth="269.0" />
+      <Label fx:id="wrong" layoutX="180.0" layoutY="319.0" prefHeight="15.0" prefWidth="270.0" text="please input your information.">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label prefHeight="38.0" prefWidth="70.0" text="ID:" translateX="60.0" translateY="180.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label text="PASSWORD:" translateX="60.0" translateY="280.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <Label layoutX="203.0" layoutY="98.0" prefHeight="71.0" prefWidth="327.0" text="Welcom to Snake!">
+         <font>
+            <Font name="Bookman Old Style" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
