@@ -475,7 +475,7 @@ public class GameController implements Initializable {
         gameMediaPlayer.pause();
         gameOverMediaPlayer.play();
 
-        //this.btnPause.setText("Game over");
+
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
