@@ -1,0 +1,6 @@
+0,22 1,22 2,22 3,22 4,22 5,22 
+UP
+3,26
+Current score: 5
+History highest: 5
+Time alive: 36s
