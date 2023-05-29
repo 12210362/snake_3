@@ -22,6 +22,7 @@ public class AdvancedStage extends Stage {
             if (Objects.nonNull(controller)) {
                 Context.INSTANCE.eventBus().register(controller);
                 setOnCloseRequest(event -> Context.INSTANCE.eventBus().unregister(controller));
+                setOnHidden(event -> Context.INSTANCE.eventBus().unregister(controller));
             }
         } catch (final java.lang.Throwable $ex) {
             throw lombok.Lombok.sneakyThrow($ex);
@@ -50,4 +51,5 @@ public class AdvancedStage extends Stage {
         show();
         centerOnScreen();
     }
+
 }
