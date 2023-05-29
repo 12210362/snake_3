@@ -489,6 +489,8 @@ public class GameController implements Initializable {
         ((Stage)btnPause.getScene().getWindow()).close();
         new AdvancedStage("logIn.fxml").withTitle("Log").shows();
         gameMediaPlayer.pause();
+        gameDaemonTask.cancel(true);
+        scheduler.shutdown();
     }
     public void generateLeaderboard() throws FileNotFoundException {
         ArrayList<LeaderboardUsers> leaderboardUsers=new ArrayList<>();
@@ -561,4 +563,5 @@ public class GameController implements Initializable {
         }
         //output.close();
     }
+
 }
