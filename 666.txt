@@ -1,0 +1,6 @@
+20,20 
+DOWN
+2,17
+Current score: 0
+History highest: 0
+Time alive: 0s
